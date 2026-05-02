@@ -102,6 +102,13 @@ a {
   }
   body {
     @apply bg-background text-foreground font-sans;
+    font-size: clamp(15px, 1.2vw, 18px);
+    line-height: 1.2;
   }
+
+}
+
+p {
+  max-width: 65ch;
 }
 

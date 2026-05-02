@@ -3,12 +3,14 @@ import { cn } from "@/lib/utils";
 export function Container({
   children,
   className,
+  outerClassName,
 }: {
   children: React.ReactNode;
   className?: string;
+  outerClassName?: string;
 }) {
   return (
-    <div style={{ paddingLeft: 40, paddingRight: 40, width: "100%" }}>
+    <div className={cn(outerClassName)} style={{ paddingLeft: 40, paddingRight: 40, width: "100%" }}>
       <div
         className={cn(className)}
         style={{ maxWidth: 1920, marginLeft: "auto", marginRight: "auto" }}

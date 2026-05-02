@@ -30,20 +30,22 @@ export function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="relative flex-1 flex items-center">
-        <Container className="w-full">
-          <div className="flex flex-col gap-[24px]" style={{ maxWidth: 800 }}>
+      <Container outerClassName="relative flex-1 h-full" className="grid grid-cols-12 gap-6 h-full">
+
+        {/* Text — 5 cols */}
+        <div className="col-span-5 flex items-center py-12">
+          <div className="flex flex-col gap-[24px]">
             <Eyebrow>Event Management — South West</Eyebrow>
 
             <div className="flex flex-col gap-[40px]">
               <h1
                 className="font-heading font-black text-foreground"
-                style={{ fontSize: "clamp(3rem, 8vw, 7rem)", letterSpacing: "0", lineHeight: 0.9 }}
+                style={{ fontSize: "clamp(2.8rem, 7vw, 6.2rem)", letterSpacing: "0", lineHeight: 0.9 }}
               >
                 The best kept secret in event management.
               </h1>
 
-              <p className="text-foreground font-sans text-sm leading-relaxed">
+              <p className="text-foreground font-sans" style={{ maxWidth: "80%" }}>
                 Large-scale public event management for non-profits, municipalities, brands, companies, and agencies. Ready to help your event today.
               </p>
 
@@ -65,30 +67,39 @@ export function Hero() {
               </div>
             </div>
           </div>
-        </Container>
-      </div>
+        </div>
+
+        {/* Photo placeholder — cols 8-12 */}
+        <div className="col-start-8 col-span-5" style={{ background: "#2a2a3a" }} />
+
+      </Container>
 
       {/* Stats bar */}
-      <div className="relative grid grid-cols-2 md:grid-cols-4 border-t border-border">
-        {stats.map((stat, i) => (
-          <div
-            key={stat.label}
-            className={cn(
-              "p-6 flex flex-col gap-1",
-              i < stats.length - 1 && "border-r border-border"
-            )}
-          >
-            <span
-              className="font-heading font-black text-foreground"
-              style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)" }}
-            >
-              {stat.value}
-            </span>
-            <span className="text-[0.62rem] font-sans text-muted-foreground tracking-[0.12em] uppercase">
-              {stat.label}
-            </span>
+      <div className="border-t border-border">
+        <Container>
+          <div className="grid grid-cols-2 md:grid-cols-4">
+            {stats.map((stat, i) => (
+              <div
+                key={stat.label}
+                className={cn(
+                  "flex flex-col gap-1",
+                  i < stats.length - 1 && "border-r border-border"
+                )}
+                style={{ padding: "16px 24px 40px 24px" }}
+              >
+                <span
+                  className="font-heading font-black text-foreground"
+                  style={{ fontSize: "clamp(2rem, 3vw, 3rem)" }}
+                >
+                  {stat.value}
+                </span>
+                <span className="text-[0.62rem] font-sans text-muted-foreground tracking-[0.12em] uppercase">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
           </div>
-        ))}
+        </Container>
       </div>
 
     </section>
