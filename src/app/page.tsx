@@ -4,6 +4,7 @@ import { TrustStrip } from "@/components/trust-strip";
 import { Services } from "@/components/services";
 import { Work } from "@/components/work";
 import { EditorialBreak } from "@/components/editorial-break";
+import { Process } from "@/components/process";
 export default function Home() {
   return (
     <>
@@ -14,6 +15,7 @@ export default function Home() {
         <Services />
         <Work />
         <EditorialBreak />
+        <Process />
       </main>
     </>
   );
