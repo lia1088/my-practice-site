@@ -1,8 +1,11 @@
 import { Eyebrow, SectionHeading } from "@/components/atoms";
+import { Nav } from "@/components/nav";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background p-16 flex flex-col gap-12">
+    <>
+    <Nav />
+    <main className="min-h-screen bg-background p-16 pt-32 flex flex-col gap-12">
 
       {/* Font + token verification */}
       <section className="flex flex-col gap-6">
@@ -36,5 +39,6 @@ export default function Home() {
       </section>
 
     </main>
+    </>
   );
 }
