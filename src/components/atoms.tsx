@@ -1,5 +1,24 @@
 import { cn } from "@/lib/utils";
 
+export function Container({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div style={{ paddingLeft: 40, paddingRight: 40, width: "100%" }}>
+      <div
+        className={cn(className)}
+        style={{ maxWidth: 1920, marginLeft: "auto", marginRight: "auto" }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
 export function Eyebrow({
   children,
   accent,
@@ -10,7 +29,7 @@ export function Eyebrow({
   return (
     <span
       className={cn(
-        "text-[0.62rem] font-mono tracking-[0.22em] uppercase block mb-4",
+        "text-[0.62rem] font-mono tracking-[0.22em] uppercase block",
         accent ? "text-[--accent]" : "text-muted-foreground"
       )}
     >
