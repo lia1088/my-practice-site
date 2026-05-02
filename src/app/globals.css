@@ -112,6 +112,11 @@ p {
   max-width: 65ch;
 }
 
+.text-body-sm {
+  font-size: clamp(13px, 0.9vw, 15px);
+  line-height: 1.5;
+}
+
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }

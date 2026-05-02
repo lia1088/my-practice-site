@@ -1,5 +1,19 @@
 import { cn } from "@/lib/utils";
 
+export function Section({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <section className={cn(className)} style={{ paddingTop: 40, paddingBottom: 80 }}>
+      {children}
+    </section>
+  );
+}
+
 export function Container({
   children,
   className,
