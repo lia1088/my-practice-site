@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero";
 import { TrustStrip } from "@/components/trust-strip";
 import { Services } from "@/components/services";
 import { Work } from "@/components/work";
+import { EditorialBreak } from "@/components/editorial-break";
 export default function Home() {
   return (
     <>
@@ -12,6 +13,7 @@ export default function Home() {
         <TrustStrip />
         <Services />
         <Work />
+        <EditorialBreak />
       </main>
     </>
   );
