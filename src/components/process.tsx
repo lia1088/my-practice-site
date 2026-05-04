@@ -3,23 +3,23 @@ import { Section, Container, Eyebrow, SectionHeading } from "@/components/atoms"
 const steps = [
   {
     number: "01",
-    title: "[Step Title]",
-    desc: "[Short description of what happens in this phase of the process.]",
+    title: "Visioning & Needs Assessment",
+    desc: "We discuss your vision and document exactly which tasks we execute, which you handle, and what we coordinate together.",
   },
   {
     number: "02",
-    title: "[Step Title]",
-    desc: "[Short description of what happens in this phase of the process.]",
+    title: "Planning & Coordination",
+    desc: "We manage all vendors, timelines, and logistics — whether executing directly or overseeing your preferred partners.",
   },
   {
     number: "03",
-    title: "[Step Title]",
-    desc: "[Short description of what happens in this phase of the process.]",
+    title: "Event Execution",
+    desc: "Single point of accountability. We manage multi-stakeholder coordination across vendors, public safety, volunteers, and more.",
   },
   {
     number: "04",
-    title: "[Step Title]",
-    desc: "[Short description of what happens in this phase of the process.]",
+    title: "Post-Event Review",
+    desc: "We debrief, document outcomes, and capture learnings to make the next event better — and easier to produce.",
   },
 ];
 
