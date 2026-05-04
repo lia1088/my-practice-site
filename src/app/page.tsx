@@ -8,6 +8,8 @@ import { Process } from "@/components/process";
 import { Testimonials } from "@/components/testimonials";
 import { TestimonialsV4 } from "@/components/testimonials-v4";
 import { FAQ } from "@/components/faq";
+import { CtaNap } from "@/components/cta-nap";
+import { Footer } from "@/components/footer";
 export default function Home() {
   return (
     <>
@@ -22,6 +24,8 @@ export default function Home() {
         <Testimonials />
         <TestimonialsV4 />
         <FAQ />
+        <CtaNap />
+        <Footer />
       </main>
     </>
   );
