@@ -5,6 +5,8 @@ import { Services } from "@/components/services";
 import { Work } from "@/components/work";
 import { EditorialBreak } from "@/components/editorial-break";
 import { Process } from "@/components/process";
+import { Testimonials } from "@/components/testimonials";
+import { TestimonialsV4 } from "@/components/testimonials-v4";
 export default function Home() {
   return (
     <>
@@ -16,6 +18,8 @@ export default function Home() {
         <Work />
         <EditorialBreak />
         <Process />
+        <Testimonials />
+        <TestimonialsV4 />
       </main>
     </>
   );
