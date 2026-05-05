@@ -1,116 +1,208 @@
-import Image from "next/image";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
-import { Eyebrow, Container } from "@/components/atoms";
+"use client";
 
-const stats = [
-  { value: "14+", label: "Years in business" },
-  { value: "4M+", label: "Event participants served" },
-  { value: "52", label: "Production team" },
-  { value: "7+ yrs", label: "Avg client relationship" },
+import React, { useState, useCallback, useRef, useEffect } from "react";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+
+const DURATION = 6000;
+
+const cases = [
+  {
+    photo: "/esw-01.avif",
+    category: "Race Production",
+    title: "Desert Dash Ultra Marathon",
+    description: "Full-scale race management for 12,000+ athletes across a 3-day weekend — logistics, medical, and finish-line operations.",
+    stat: "12,000+",
+    statLabel: "Participants",
+  },
+  {
+    photo: "/esw-02.avif",
+    category: "Municipal Event",
+    title: "Big Star Frisco",
+    description: "City-commissioned outdoor festival spanning 6 city blocks with 45,000 attendees and zero safety incidents.",
+    stat: "45,000+",
+    statLabel: "Attendees",
+  },
+  {
+    photo: "/ESW-Katy5K-2025-37.jpg",
+    category: "Road Race",
+    title: "Katy 5K Classic",
+    description: "USATF-certified road race with permitting, course management, and finish-line production from bib to medal.",
+    stat: "8,500+",
+    statLabel: "Runners",
+  },
+  {
+    photo: "/Dallas_Bike_Ride_2025-27.jpg",
+    category: "Cycling Event",
+    title: "Dallas Bike Ride",
+    description: "Multi-route cycling event across closed city streets, coordinating road closures, safety crews, and participant logistics.",
+    stat: "22,000+",
+    statLabel: "Riders",
+  },
+  {
+    photo: "/EventSouthwest-BigStarFrisco-25-26.jpg",
+    category: "Community Event",
+    title: "Big Star Frisco Festival",
+    description: "Multi-day community festival with live entertainment, vendor villages, and city-wide permitting from concept to cleanup.",
+    stat: "35,000+",
+    statLabel: "Guests",
+  },
+  {
+    photo: "/ESW-JPMORGAN-2025-72.jpg",
+    category: "Corporate Event",
+    title: "JPMorgan Chase Corporate Run",
+    description: "Corporate wellness event for one of the country's largest employers — full production, timing, and site management.",
+    stat: "5,000+",
+    statLabel: "Employees",
+  },
 ];
 
 export function Hero() {
+  const [current, setCurrent] = useState(0);
+  const [animKey, setAnimKey] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const goTo = useCallback((index: number) => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    setCurrent(index);
+    setAnimKey((k) => k + 1);
+  }, []);
+
+  const next = useCallback(() => goTo((current + 1) % cases.length), [current, goTo]);
+  const prev = useCallback(() => goTo((current - 1 + cases.length) % cases.length), [current, goTo]);
+
+  useEffect(() => {
+    timerRef.current = setTimeout(next, DURATION);
+    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
+  }, [current, next]);
+
+  const cs = cases[current];
+
   return (
-    <section className="relative h-screen flex flex-col justify-between bg-background pt-16">
+    <section className="relative w-full overflow-hidden border-t border-border" id="work" style={{ height: "92vh" }}>
 
-      {/* Ghost watermark */}
-      <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <span
-          className="font-heading font-black select-none"
-          style={{
-            fontSize: "clamp(120px, 28vw, 420px)",
-            color: "transparent",
-            WebkitTextStroke: "1px rgba(255,255,255,0.06)",
-            letterSpacing: "0",
-          }}
-        >
-          ESW
-        </span>
-      </div>
+      {/* Background images */}
+      {cases.map((c, i) => (
+        <Image
+          key={c.photo}
+          src={c.photo}
+          alt={c.title}
+          fill
+          priority={i === 0}
+          sizes="100vw"
+          className={cn(
+            "object-cover object-center transition-opacity duration-700",
+            current === i ? "opacity-100" : "opacity-0"
+          )}
+        />
+      ))}
 
-      {/* Main content */}
-      <Container outerClassName="relative flex-1 h-full" className="grid grid-cols-2 h-full gap-0">
+      {/* Gradient overlay */}
+      <div
+        className="absolute inset-0"
+        style={{ background: "linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.1) 100%)" }}
+      />
 
-        {/* Text — left 50% */}
-        <div className="flex items-center py-12" style={{ paddingRight: 48 }}>
-          <div className="flex flex-col gap-[24px]">
-            <Eyebrow>Event Management — South West</Eyebrow>
+      {/* Content */}
+      <div className="absolute inset-0 flex flex-col justify-between px-10" style={{ maxWidth: 1920, margin: "0 auto" }}>
 
-            <div className="flex flex-col gap-[40px]">
-              <h1
-                className="font-heading font-black text-foreground"
-                style={{ fontSize: "clamp(2.8rem, 7vw, 6.2rem)", letterSpacing: "0", lineHeight: 0.9 }}
-              >
-                The best kept secret in event management.
-              </h1>
+        {/* Top — section label + counter */}
+        <div className="flex items-center justify-between pt-12">
+          <span className="text-[0.62rem] font-mono tracking-[0.22em] uppercase" style={{ color: "var(--brand-primary)" }}>
+            Our Work
+          </span>
+          <span className="text-[0.62rem] font-mono tracking-[0.18em] text-white/40">
+            {String(current + 1).padStart(2, "0")} / {String(cases.length).padStart(2, "0")}
+          </span>
+        </div>
 
-              <p className="text-foreground font-sans" style={{ maxWidth: "80%" }}>
-                Large-scale public event management for non-profits, municipalities, brands, companies, and agencies. Ready to help your event today.
-              </p>
+        {/* Middle — case info */}
+        <div className="flex flex-col gap-6" style={{ maxWidth: "52ch" }}>
+          <span
+            key={`cat-${animKey}`}
+            className="text-[0.62rem] font-mono tracking-[0.22em] uppercase text-white/50"
+            style={{ animation: "fadeUp 0.5s ease both" }}
+          >
+            {cs.category}
+          </span>
 
-              <div className="flex items-center gap-4">
-                <Link
-                  href="#contact"
-                  className={cn(buttonVariants({ size: "lg" }), "font-sans")}
-                  style={{ backgroundColor: "var(--brand-primary)", color: "#ffffff", padding: "12px 40px" }}
-                >
-                  Book a free consultation
-                </Link>
-                <Link
-                  href="#work"
-                  className={cn(buttonVariants({ variant: "outline", size: "lg" }), "font-sans")}
-                  style={{ padding: "12px 40px", borderColor: "#ffffff" }}
-                >
-                  See our work
-                </Link>
-              </div>
-            </div>
+          <h2
+            key={`title-${animKey}`}
+            className="font-heading font-black text-white"
+            style={{
+              fontSize: "clamp(2.4rem, 5.5vw, 5rem)",
+              lineHeight: 0.95,
+              letterSpacing: 0,
+              animation: "fadeUp 0.5s 0.06s ease both",
+            }}
+          >
+            {cs.title}
+          </h2>
+
+          <p
+            key={`desc-${animKey}`}
+            className="text-white/70 leading-relaxed"
+            style={{ animation: "fadeUp 0.5s 0.12s ease both", maxWidth: "42ch" }}
+          >
+            {cs.description}
+          </p>
+
+          <div
+            key={`stat-${animKey}`}
+            className="flex items-baseline gap-3"
+            style={{ animation: "fadeUp 0.5s 0.18s ease both" }}
+          >
+            <span className="font-heading font-black text-white" style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)" }}>
+              {cs.stat}
+            </span>
+            <span className="text-[0.62rem] font-mono tracking-[0.18em] uppercase text-white/50">
+              {cs.statLabel}
+            </span>
           </div>
         </div>
 
-        {/* Hero photo — right 50% */}
-        <div className="relative overflow-hidden">
-          <Image
-            src="/hero.webp"
-            alt="Event South West live production"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-        </div>
+        {/* Bottom — progress dots + arrows */}
+        <div className="flex items-center justify-between pb-12">
 
-      </Container>
-
-      {/* Stats bar */}
-      <div className="border-t border-border">
-        <Container>
-          <div className="grid grid-cols-2 md:grid-cols-4">
-            {stats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className={cn(
-                  "flex flex-col gap-1",
-                  i < stats.length - 1 && "border-r border-border"
-                )}
-                style={{ padding: "16px 24px 40px 24px" }}
-              >
-                <span
-                  className="font-heading font-black text-foreground"
-                  style={{ fontSize: "clamp(2rem, 3vw, 3rem)" }}
-                >
-                  {stat.value}
-                </span>
-                <span className="text-[0.62rem] font-sans text-muted-foreground tracking-[0.12em] uppercase">
-                  {stat.label}
-                </span>
-              </div>
+          {/* Dots */}
+          <div className="flex items-center gap-2">
+            {cases.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                className="relative overflow-hidden transition-all duration-300"
+                style={{
+                  height: 2,
+                  width: current === i ? 32 : 16,
+                  background: current === i ? "var(--brand-primary)" : "rgba(255,255,255,0.25)",
+                }}
+                aria-label={`Go to slide ${i + 1}`}
+              />
             ))}
           </div>
-        </Container>
-      </div>
 
+          {/* Arrows */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={prev}
+              className="flex items-center justify-center border border-white/20 text-white hover:border-white/60 transition-colors"
+              style={{ width: 44, height: 44 }}
+              aria-label="Previous"
+            >
+              ←
+            </button>
+            <button
+              onClick={next}
+              className="flex items-center justify-center border border-white/20 text-white hover:border-white/60 transition-colors"
+              style={{ width: 44, height: 44 }}
+              aria-label="Next"
+            >
+              →
+            </button>
+          </div>
+
+        </div>
+      </div>
     </section>
   );
 }
