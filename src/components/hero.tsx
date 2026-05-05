@@ -93,7 +93,7 @@ export function Hero() {
           <div className="flex flex-col gap-6" style={{ width: "80%" }}>
 
             {/* Pill / eyebrow */}
-            <div className="inline-flex w-fit items-center gap-2 border px-4 py-1.5" style={{ borderColor: "color-mix(in srgb, var(--brand-primary) 30%, transparent)", backgroundColor: "color-mix(in srgb, var(--brand-primary) 8%, transparent)" }}>
+            <div className="inline-flex w-fit items-center gap-2 border rounded-full" style={{ padding: "12px 20px", borderColor: "color-mix(in srgb, var(--brand-primary) 30%, transparent)", backgroundColor: "color-mix(in srgb, var(--brand-primary) 8%, transparent)" }}>
               <span className="h-1.5 w-1.5 rounded-full animate-pulse" style={{ backgroundColor: "var(--brand-primary)" }} />
               <span className="text-xs font-medium tracking-wide uppercase" style={{ color: "var(--brand-primary)" }}>
                 Est. 2012 · Dallas, TX · Nationwide
