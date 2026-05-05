@@ -68,6 +68,7 @@ function BentoCard({
         fill
         className="object-cover transition-transform duration-700 group-hover:scale-105"
         sizes="(max-width: 768px) 100vw, 50vw"
+        priority
       />
 
       {/* Base gradient — always on, darkens on hover */}
@@ -82,16 +83,6 @@ function BentoCard({
         className="absolute bottom-0 left-0 right-0 flex flex-col gap-2 transition-transform duration-400 group-hover:-translate-y-3"
         style={{ padding: 24 }}
       >
-        <span
-          className="w-fit text-[0.62rem] font-mono tracking-[0.18em] uppercase border px-2 py-0.5"
-          style={{
-            color: "var(--brand-primary)",
-            borderColor: "color-mix(in srgb, var(--brand-primary) 30%, transparent)",
-            backgroundColor: "color-mix(in srgb, var(--brand-primary) 8%, transparent)",
-          }}
-        >
-          {event.badge}
-        </span>
         <h3 className="font-heading font-extrabold text-white capitalize leading-tight" style={{ fontSize: "clamp(1rem, 1.4vw, 1.3rem)" }}>
           {event.title}
         </h3>
