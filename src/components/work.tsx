@@ -1,3 +1,5 @@
+import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Section, Container, Eyebrow, SectionHeading } from "@/components/atoms";
@@ -7,24 +9,28 @@ const workItems = [
     title: "Desert Dash Ultra Marathon",
     category: "Race Production",
     participants: "12,000+",
+    photo: "/esw-01.avif",
     featured: true,
   },
   {
-    title: "Phoenix City Festival",
+    title: "Big Star Frisco",
     category: "Municipal Event",
     participants: "45,000+",
+    photo: "/esw-03.avif",
     featured: false,
   },
   {
-    title: "Red Cross Charity Run",
+    title: "Community Charity Walk",
     category: "Non-Profit",
     participants: "8,500+",
+    photo: "/esw-05.avif",
     featured: false,
   },
   {
-    title: "Spartan Southwest Series",
-    category: "Obstacle Race",
+    title: "Cycling Event Series",
+    category: "Endurance",
     participants: "22,000+",
+    photo: "/esw-04.avif",
     featured: false,
   },
 ];
@@ -33,17 +39,25 @@ function WorkCard({
   item,
   className,
   height,
+  square,
+  style,
 }: {
   item: typeof workItems[0];
   className?: string;
-  height: number;
+  height?: string | number;
+  square?: boolean;
+  style?: React.CSSProperties;
 }) {
+  const baseStyle = square ? { aspectRatio: "1 / 1" } : height ? { height } : {};
   return (
     <div
       className={cn("relative overflow-hidden group cursor-pointer", className)}
-      style={{ height, background: "#1a1a2a" }}
+      style={{ ...baseStyle, ...style }}
     >
-      {/* Caption overlay */}
+      <Image src={item.photo} alt={item.title} fill className="object-cover object-center transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 50vw" />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.15) 70%, transparent 100%)" }} />
+
+      {/* Caption */}
       <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between" style={{ padding: "0 24px 24px 24px" }}>
         <div className="flex flex-col gap-3">
           <span className="text-[0.62rem] font-sans tracking-[0.14em] uppercase text-muted-foreground">
@@ -76,7 +90,7 @@ export function Work() {
 
       {/* Full-width featured card */}
       <Container>
-        <WorkCard item={workItems[0]} height={480} className="border border-border" />
+        <WorkCard item={workItems[0]} className="border border-border" style={{ aspectRatio: "3 / 1" }} />
       </Container>
 
       {/* Three supporting cards */}
@@ -86,7 +100,7 @@ export function Work() {
             <WorkCard
               key={item.title}
               item={item}
-              height={280}
+              square
               className="border-r border-t border-border"
             />
           ))}

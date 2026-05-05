@@ -37,17 +37,13 @@ export function Container({
 
 export function Eyebrow({
   children,
-  accent,
 }: {
   children: React.ReactNode;
-  accent?: boolean;
 }) {
   return (
     <span
-      className={cn(
-        "text-[0.62rem] font-mono tracking-[0.22em] uppercase block",
-        accent ? "text-[--accent]" : "text-muted-foreground"
-      )}
+      className="text-[0.62rem] font-mono tracking-[0.22em] uppercase block"
+      style={{ color: "var(--brand-primary)" }}
     >
       {children}
     </span>

@@ -54,7 +54,7 @@ export function Services() {
               style={{ padding: "40px 32px" }}
             >
               {/* Hover accent top border */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity bg-[--accent]" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity" style={{ background: "var(--brand-primary)" }} />
 
               <svc.icon size={28} className="text-foreground" strokeWidth={1.5} />
 

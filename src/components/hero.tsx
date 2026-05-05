@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
@@ -30,10 +31,10 @@ export function Hero() {
       </div>
 
       {/* Main content */}
-      <Container outerClassName="relative flex-1 h-full" className="grid grid-cols-12 gap-6 h-full">
+      <Container outerClassName="relative flex-1 h-full" className="grid grid-cols-2 h-full gap-0">
 
-        {/* Text — 5 cols */}
-        <div className="col-span-5 flex items-center py-12">
+        {/* Text — left 50% */}
+        <div className="flex items-center py-12" style={{ paddingRight: 48 }}>
           <div className="flex flex-col gap-[24px]">
             <Eyebrow>Event Management — South West</Eyebrow>
 
@@ -53,14 +54,14 @@ export function Hero() {
                 <Link
                   href="#contact"
                   className={cn(buttonVariants({ size: "lg" }), "font-sans")}
-                  style={{ color: "#08080f", padding: "12px 40px" }}
+                  style={{ backgroundColor: "var(--brand-primary)", color: "#ffffff", padding: "12px 40px" }}
                 >
                   Book a free consultation
                 </Link>
                 <Link
                   href="#work"
                   className={cn(buttonVariants({ variant: "outline", size: "lg" }), "font-sans")}
-                  style={{ padding: "12px 40px" }}
+                  style={{ padding: "12px 40px", borderColor: "#ffffff" }}
                 >
                   See our work
                 </Link>
@@ -69,8 +70,16 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Photo placeholder — cols 8-12 */}
-        <div className="col-start-8 col-span-5" style={{ background: "#2a2a3a" }} />
+        {/* Hero photo — right 50% */}
+        <div className="relative overflow-hidden">
+          <Image
+            src="/hero.webp"
+            alt="Event South West live production"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
 
       </Container>
 

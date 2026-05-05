@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
@@ -5,7 +6,8 @@ import { Container } from "@/components/atoms";
 
 export function EditorialBreak() {
   return (
-    <div className="relative overflow-hidden" style={{ height: 600, background: "#1a1a2a" }}>
+    <div className="relative overflow-hidden" style={{ height: 600 }}>
+      <Image src="/esw-06.avif" alt="" fill className="object-cover object-center" priority />
 
       {/* Gradient overlay */}
       <div
@@ -30,7 +32,7 @@ export function EditorialBreak() {
               <Link
                 href="#contact"
                 className={cn(buttonVariants({ size: "lg" }), "font-sans")}
-                style={{ color: "#08080f", padding: "12px 40px" }}
+                style={{ backgroundColor: "var(--brand-primary)", color: "#ffffff", padding: "12px 40px" }}
               >
                 Work with us
               </Link>

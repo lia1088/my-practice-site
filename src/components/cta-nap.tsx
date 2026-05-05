@@ -17,7 +17,7 @@ export function CtaNap() {
           <Link
             href="#contact"
             className={cn(buttonVariants({ size: "lg" }), "font-sans")}
-            style={{ color: "#08080f", padding: "12px 40px" }}
+            style={{ backgroundColor: "var(--brand-primary)", color: "#ffffff", padding: "12px 40px" }}
           >
             Book a free consultation
           </Link>

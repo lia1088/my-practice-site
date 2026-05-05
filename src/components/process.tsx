@@ -46,7 +46,7 @@ export function Process() {
               <div
                 aria-hidden="true"
                 className="font-heading font-black select-none"
-                style={{ fontSize: "4.5rem", color: "#ffffff", opacity: 0.06, letterSpacing: 0, lineHeight: 1 }}
+                style={{ fontSize: "4.5rem", color: "#ffffff", letterSpacing: 0, lineHeight: 1 }}
               >
                 {step.number}
               </div>

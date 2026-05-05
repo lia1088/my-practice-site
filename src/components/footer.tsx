@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/atoms";
 
@@ -42,9 +43,7 @@ export function Footer() {
           {/* Brand + contact — cols 1-3 */}
           <div className="col-span-3 flex flex-col gap-8">
             <div className="flex flex-col gap-3">
-              <span className="font-heading font-black text-foreground uppercase tracking-wide text-lg">
-                Event South West
-              </span>
+              <Image src="/esw-logo.png" alt="Event South West" width={80} height={32} className="object-contain" />
               <p className="text-body-sm text-muted-foreground">
                 The best kept secret in event management.
               </p>

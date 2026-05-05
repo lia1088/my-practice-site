@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Section, Container, Eyebrow, SectionHeading } from "@/components/atoms";
 
 const stats = [
@@ -25,8 +26,10 @@ function QuoteCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
     <div className="flex flex-col justify-between border border-border h-full" style={{ background: "#0e0e1a" }}>
       {/* Top: photo + quote */}
       <div className="flex h-full">
-        {/* Photo placeholder — 1/3 width */}
-        <div className="shrink-0" style={{ width: "33%", background: "#2a2a3a" }} />
+        {/* Photo */}
+        <div className="relative shrink-0 overflow-hidden" style={{ width: "33%" }}>
+          <Image src="/esw-07.avif" alt="" fill className="object-cover object-center" sizes="20vw" />
+        </div>
 
         {/* Quote content */}
         <div className="flex flex-col justify-between flex-1" style={{ padding: "40px" }}>
@@ -57,8 +60,8 @@ function StatCard({ stat, shade }: { stat: typeof stats[0]; shade: string }) {
     <div className="flex flex-col justify-between border border-border h-full" style={{ padding: "40px", background: shade }}>
       <div>
         <div
-          className="font-heading font-black text-foreground"
-          style={{ fontSize: "clamp(2.4rem, 4vw, 3.5rem)", lineHeight: 1 }}
+          className="font-heading font-black"
+          style={{ fontSize: "clamp(2.4rem, 4vw, 3.5rem)", lineHeight: 1, color: "var(--brand-primary)" }}
         >
           {stat.value}
         </div>
