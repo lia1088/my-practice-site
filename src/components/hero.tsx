@@ -34,8 +34,8 @@ export function Hero() {
       <Container outerClassName="relative flex-1 h-full" className="grid grid-cols-2 h-full gap-0">
 
         {/* Text — left 50% */}
-        <div className="flex items-center py-12" style={{ paddingRight: 48 }}>
-          <div className="flex flex-col gap-[24px]">
+        <div className="flex items-center py-12">
+          <div className="flex flex-col gap-[24px]" style={{ width: "80%" }}>
             <Eyebrow>Event Management — South West</Eyebrow>
 
             <div className="flex flex-col gap-[40px]">
