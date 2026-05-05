@@ -59,8 +59,7 @@ function BentoCard({
   return (
     <Link
       href={event.href}
-      className={`group relative overflow-hidden bg-card ${className}`}
-      style={{ border: "1px solid var(--border)" }}
+      className={`group relative overflow-hidden border border-border bg-card ${className}`}
     >
       {/* Image */}
       <Image
