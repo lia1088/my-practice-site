@@ -71,7 +71,7 @@ export function ServicesSection() {
                 <div className="relative flex items-start gap-6">
                   <span className="mt-1 text-xs font-bold text-foreground/10 tabular-nums">{service.number}</span>
                   <div className="flex-1 pr-16">
-                    <h3 className="font-heading text-xl font-bold text-foreground transition-colors group-hover:text-[var(--brand-primary)]">
+                    <h3 className="font-heading text-xl font-bold text-foreground transition-colors group-hover:text-[var(--brand-primary)] capitalize">
                       {service.title}
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">

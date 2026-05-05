@@ -137,7 +137,7 @@ export function WorkV2() {
 
               {/* Title */}
               <h3
-                className="font-heading font-bold text-foreground"
+                className="font-heading font-bold text-foreground capitalize"
                 style={{ fontSize: "clamp(1.2rem, 1.8vw, 1.7rem)", lineHeight: 1.05 }}
               >
                 {cs.title}

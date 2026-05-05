@@ -9,7 +9,7 @@ export function CtaNap() {
       <Container>
         <div className="flex flex-col items-center text-center gap-[40px]">
           <h2
-            className="font-heading font-bold text-foreground"
+            className="font-heading font-bold text-foreground capitalize"
             style={{ fontSize: "clamp(2.4rem, 5vw, 5rem)", lineHeight: 0.95, letterSpacing: 0, maxWidth: "70%" }}
           >
             Ready to produce something unforgettable?

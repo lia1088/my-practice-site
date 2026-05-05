@@ -40,7 +40,7 @@ export function Hero() {
 
             <div className="flex flex-col gap-[40px]">
               <h1
-                className="font-heading font-bold text-foreground"
+                className="font-heading font-bold text-foreground capitalize"
                 style={{ fontSize: "clamp(2.4rem, 5.5vw, 4.8rem)", letterSpacing: "0", lineHeight: 0.95 }}
               >
                 The best kept secret in event management.
@@ -97,7 +97,7 @@ export function Hero() {
                 style={{ padding: "16px 24px 40px 24px" }}
               >
                 <span
-                  className="font-heading font-bold text-foreground"
+                  className="font-heading font-bold text-foreground capitalize"
                   style={{ fontSize: "clamp(2rem, 3vw, 3rem)" }}
                 >
                   {stat.value}

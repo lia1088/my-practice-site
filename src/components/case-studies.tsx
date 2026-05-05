@@ -128,7 +128,7 @@ export function CaseStudies() {
 
           <h2
             key={`title-${animKey}`}
-            className="font-heading font-bold text-white"
+            className="font-heading font-bold text-white capitalize"
             style={{
               fontSize: "clamp(2.4rem, 5.5vw, 5rem)",
               lineHeight: 0.95,
@@ -152,7 +152,7 @@ export function CaseStudies() {
             className="flex items-baseline gap-3"
             style={{ animation: "fadeUp 0.5s 0.18s ease both" }}
           >
-            <span className="font-heading font-bold text-white" style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)" }}>
+            <span className="font-heading font-bold text-white capitalize" style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)" }}>
               {cs.stat}
             </span>
             <span className="text-[0.62rem] font-mono tracking-[0.18em] uppercase text-white/50">

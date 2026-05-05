@@ -47,7 +47,7 @@ export function ProofSection() {
           <p className="mb-4 text-xs font-mono font-semibold uppercase tracking-widest text-[var(--brand-primary)]">
             Track Record
           </p>
-          <h2 className="font-heading text-4xl font-bold tracking-tight text-white md:text-6xl">
+          <h2 className="font-heading text-4xl font-bold tracking-tight text-white md:text-6xl capitalize">
             13 years. 4 million participants.{" "}
             <br className="hidden md:block" />
             <span style={{ color: "var(--brand-primary)" }}>Zero shortcuts.</span>
