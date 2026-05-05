@@ -32,14 +32,14 @@ export function TestimonialsV3() {
         {/* Featured quote */}
         <div className="border border-border" style={{ padding: "64px 48px" }}>
           <p
-            className="font-heading font-black text-foreground"
+            className="font-heading font-bold text-foreground"
             style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)", lineHeight: 1.05, letterSpacing: 0, maxWidth: "80%" }}
           >
             "{testimonials[0].quote}"
           </p>
           <div className="flex items-center gap-6" style={{ marginTop: 48 }}>
             <div className="h-px flex-1 bg-border" />
-            <span className="font-heading font-black text-foreground text-sm">{testimonials[0].name}</span>
+            <span className="font-heading font-bold text-foreground text-sm">{testimonials[0].name}</span>
             <span className="text-[0.68rem] font-sans tracking-[0.12em] uppercase text-muted-foreground">{testimonials[0].title}</span>
           </div>
         </div>
@@ -56,7 +56,7 @@ export function TestimonialsV3() {
                 "{t.quote}"
               </p>
               <div className="flex flex-col gap-1" style={{ marginTop: 32 }}>
-                <span className="font-heading font-black text-foreground text-sm">{t.name}</span>
+                <span className="font-heading font-bold text-foreground text-sm">{t.name}</span>
                 <span className="text-[0.68rem] font-sans tracking-[0.12em] uppercase text-muted-foreground">{t.title}</span>
               </div>
             </div>

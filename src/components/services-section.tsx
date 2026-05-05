@@ -63,7 +63,7 @@ export function ServicesSection() {
             {services.map((service) => (
               <div key={service.title} className="group relative py-8 first:pt-0 overflow-hidden">
                 <span
-                  className="pointer-events-none select-none absolute right-0 top-1/2 -translate-y-1/2 font-heading font-black leading-none text-border"
+                  className="pointer-events-none select-none absolute right-0 top-1/2 -translate-y-1/2 font-heading font-bold leading-none text-border"
                   style={{ fontSize: "7rem" }}
                 >
                   {service.number}

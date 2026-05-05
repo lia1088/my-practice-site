@@ -58,7 +58,7 @@ export function Services() {
 
               <svc.icon size={28} className="text-foreground" strokeWidth={1.5} />
 
-              <div className="font-heading font-black text-foreground leading-tight" style={{ fontSize: "clamp(1.1rem, 1.4vw, 1.4rem)" }}>
+              <div className="font-heading font-bold text-foreground leading-tight" style={{ fontSize: "clamp(1.1rem, 1.4vw, 1.4rem)" }}>
                 {svc.title}
               </div>
 

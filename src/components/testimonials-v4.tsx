@@ -43,7 +43,7 @@ function QuoteCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
 
             <div className="flex items-end justify-between">
               <div className="flex flex-col gap-1">
-                <span className="font-heading font-black text-foreground text-sm">{testimonial.name}</span>
+                <span className="font-heading font-bold text-foreground text-sm">{testimonial.name}</span>
                 <span className="text-[0.65rem] font-sans tracking-[0.12em] uppercase text-muted-foreground">{testimonial.title}</span>
               </div>
               <span className="text-foreground text-lg">→</span>
@@ -60,7 +60,7 @@ function StatCard({ stat, shade }: { stat: typeof stats[0]; shade: string }) {
     <div className="flex flex-col justify-between border border-border h-full" style={{ padding: "40px", background: shade }}>
       <div>
         <div
-          className="font-heading font-black"
+          className="font-heading font-bold"
           style={{ fontSize: "clamp(2.4rem, 4vw, 3.5rem)", lineHeight: 1, color: "var(--brand-primary)" }}
         >
           {stat.value}

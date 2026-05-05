@@ -63,7 +63,7 @@ function WorkCard({
           <span className="text-[0.62rem] font-sans tracking-[0.14em] uppercase text-muted-foreground">
             {item.category}
           </span>
-          <span className="font-heading font-black text-foreground" style={{ fontSize: "clamp(1.1rem, 1.6vw, 1.5rem)" }}>
+          <span className="font-heading font-bold text-foreground" style={{ fontSize: "clamp(1.1rem, 1.6vw, 1.5rem)" }}>
             {item.title}
           </span>
         </div>

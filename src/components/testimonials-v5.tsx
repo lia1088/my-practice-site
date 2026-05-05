@@ -153,7 +153,7 @@ export function TestimonialsV5() {
 
               {/* Name + role */}
               <div className="flex flex-col items-start gap-1">
-                <span className="font-heading font-black text-foreground text-sm">{t.name}</span>
+                <span className="font-heading font-bold text-foreground text-sm">{t.name}</span>
                 <span className="text-[0.62rem] font-mono tracking-[0.14em] uppercase text-muted-foreground">{t.role} · {t.client}</span>
               </div>
             </div>

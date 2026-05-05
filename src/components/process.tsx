@@ -45,14 +45,14 @@ export function Process() {
               {/* Ghost number */}
               <div
                 aria-hidden="true"
-                className="font-heading font-black select-none"
+                className="font-heading font-bold select-none"
                 style={{ fontSize: "4.5rem", color: "#ffffff", letterSpacing: 0, lineHeight: 1 }}
               >
                 {step.number}
               </div>
 
               <div className="flex flex-col gap-4" style={{ marginTop: 32 }}>
-                <div className="font-heading font-black text-foreground" style={{ fontSize: "clamp(1rem, 1.2vw, 1.2rem)" }}>
+                <div className="font-heading font-bold text-foreground" style={{ fontSize: "clamp(1rem, 1.2vw, 1.2rem)" }}>
                   {step.title}
                 </div>
                 <p className="text-body-sm text-muted-foreground">

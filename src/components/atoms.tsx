@@ -60,7 +60,7 @@ export function SectionHeading({
   return (
     <h2
       className={cn(
-        "font-heading font-black leading-[1.02] tracking-tight",
+        "font-heading font-bold leading-[1.02] tracking-tight",
         className
       )}
       style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", letterSpacing: "0" }}

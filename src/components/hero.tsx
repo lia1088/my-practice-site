@@ -18,7 +18,7 @@ export function Hero() {
       {/* Ghost watermark */}
       <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <span
-          className="font-heading font-black select-none"
+          className="font-heading font-bold select-none"
           style={{
             fontSize: "clamp(120px, 28vw, 420px)",
             color: "transparent",
@@ -40,7 +40,7 @@ export function Hero() {
 
             <div className="flex flex-col gap-[40px]">
               <h1
-                className="font-heading font-black text-foreground"
+                className="font-heading font-bold text-foreground"
                 style={{ fontSize: "clamp(2.8rem, 7vw, 6.2rem)", letterSpacing: "0", lineHeight: 0.9 }}
               >
                 The best kept secret in event management.
@@ -97,7 +97,7 @@ export function Hero() {
                 style={{ padding: "16px 24px 40px 24px" }}
               >
                 <span
-                  className="font-heading font-black text-foreground"
+                  className="font-heading font-bold text-foreground"
                   style={{ fontSize: "clamp(2rem, 3vw, 3rem)" }}
                 >
                   {stat.value}

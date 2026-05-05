@@ -37,14 +37,14 @@ export function TestimonialsV2() {
             >
               {/* Author — 3 cols */}
               <div className="col-span-3 flex flex-col gap-2 pt-1">
-                <span className="font-heading font-black text-foreground">{t.name}</span>
+                <span className="font-heading font-bold text-foreground">{t.name}</span>
                 <span className="text-[0.68rem] font-sans tracking-[0.12em] uppercase text-muted-foreground">{t.title}</span>
               </div>
 
               {/* Quote — 8 cols */}
               <div className="col-span-8 col-start-4">
                 <p
-                  className="font-heading font-black text-foreground"
+                  className="font-heading font-bold text-foreground"
                   style={{ fontSize: "clamp(1.4rem, 2.2vw, 2rem)", lineHeight: 1.1, letterSpacing: 0 }}
                 >
                   "{t.quote}"

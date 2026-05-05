@@ -72,7 +72,7 @@ export function WhoWeHelp() {
           {/* Single sentence: "We work with [categories…]" */}
           <div className="flex items-baseline flex-wrap" style={{ gap: "0 0.35em", paddingBottom: "0.15em" }}>
             <h2
-              className="font-heading font-black text-foreground shrink-0"
+              className="font-heading font-bold text-foreground shrink-0"
               style={{ fontSize: FONT_SIZE, lineHeight: 1.02, letterSpacing: 0 }}
             >
               We work with
@@ -84,7 +84,7 @@ export function WhoWeHelp() {
                 <button
                   key={cat.name}
                   onClick={() => setActive(i)}
-                  className="shrink-0 font-heading font-black transition-all duration-500"
+                  className="shrink-0 font-heading font-bold transition-all duration-500"
                   style={{
                     fontSize: FONT_SIZE,
                     lineHeight: 1.02,
@@ -118,7 +118,7 @@ export function WhoWeHelp() {
             style={{ marginTop: 48, maxWidth: 520, animation: "fadeUp 0.35s ease forwards" }}
           >
             <h3
-              className="font-heading font-black text-foreground"
+              className="font-heading font-bold text-foreground"
               style={{ fontSize: "clamp(1.2rem, 1.8vw, 1.6rem)", lineHeight: 1.1 }}
             >
               {categories[active].subtitle}
