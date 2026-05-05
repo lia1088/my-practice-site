@@ -55,9 +55,9 @@ export function WhatWeDo() {
   return (
     <section className="relative bg-background py-20 md:py-32 border-t border-border overflow-hidden">
       <Container>
-        <div className="mb-12">
+        <div className="flex flex-col gap-[24px]" style={{ marginBottom: 80 }}>
           <Eyebrow>What We Do</Eyebrow>
-          <SectionHeading className="mt-3">Public Event Management</SectionHeading>
+          <SectionHeading>Public Event Management</SectionHeading>
         </div>
 
         {/* Featured card */}
