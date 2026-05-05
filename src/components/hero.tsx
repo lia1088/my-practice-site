@@ -41,7 +41,7 @@ export function Hero() {
             <div className="flex flex-col gap-[40px]">
               <h1
                 className="font-heading font-bold text-foreground"
-                style={{ fontSize: "clamp(2.8rem, 7vw, 6.2rem)", letterSpacing: "0", lineHeight: 0.9 }}
+                style={{ fontSize: "clamp(2rem, 4.5vw, 4rem)", letterSpacing: "0", lineHeight: 0.95 }}
               >
                 The best kept secret in event management.
               </h1>

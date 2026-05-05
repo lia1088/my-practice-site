@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/atoms";
@@ -15,25 +12,11 @@ const links = [
 ];
 
 export function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled
-          ? "bg-background/90 backdrop-blur-sm"
-          : "bg-transparent"
-      )}
-      style={{
-        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.5)" : "1px solid rgba(255,255,255,0.15)",
-      }}
+      className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm"
+      style={{ borderBottom: "1px solid rgba(255,255,255,0.12)" }}
     >
       <Container>
         <div className="grid grid-cols-12 gap-6 items-center" style={{ paddingTop: 14, paddingBottom: 14 }}>
