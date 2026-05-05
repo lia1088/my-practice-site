@@ -61,6 +61,7 @@ function BentoCard({
       href={event.href}
       className={`group relative overflow-hidden border border-border bg-card ${className}`}
     >
+      {/* Image */}
       <Image
         src={event.img}
         alt={event.title}
@@ -68,13 +69,19 @@ function BentoCard({
         className="object-cover transition-transform duration-700 group-hover:scale-105"
         sizes="(max-width: 768px) 100vw, 50vw"
       />
-      {/* Gradient overlay */}
+
+      {/* Base gradient — always on, darkens on hover */}
       <div
-        className="absolute inset-0"
-        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 50%, transparent 100%)" }}
+        className="absolute inset-0 transition-opacity duration-400"
+        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.1) 100%)" }}
       />
-      {/* Info */}
-      <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-2" style={{ padding: 24 }}>
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors duration-400" />
+
+      {/* Content — slides up on hover, button reveals */}
+      <div
+        className="absolute bottom-0 left-0 right-0 flex flex-col gap-2 transition-transform duration-400 group-hover:-translate-y-3"
+        style={{ padding: 24 }}
+      >
         <span
           className="w-fit text-[0.62rem] font-mono tracking-[0.18em] uppercase border px-2 py-0.5"
           style={{
@@ -89,13 +96,20 @@ function BentoCard({
           {event.title}
         </h3>
         {showDescription && (
-          <p className="text-sm text-white/60 leading-relaxed" style={{ maxWidth: "42ch" }}>
+          <p className="text-sm text-white/70 leading-relaxed" style={{ maxWidth: "42ch" }}>
             {event.description}
           </p>
         )}
-        <span className="text-[0.62rem] font-mono tracking-[0.16em] uppercase text-white/40 group-hover:text-white/70 transition-colors mt-1">
-          Learn More →
-        </span>
+
+        {/* Button — hidden below, slides up on hover */}
+        <div className="overflow-hidden" style={{ marginTop: 8 }}>
+          <span
+            className="inline-flex items-center gap-2 text-[0.72rem] font-sans tracking-widest uppercase text-foreground translate-y-full group-hover:translate-y-0 transition-transform duration-400 px-4 py-2 bg-white text-background block w-fit"
+            style={{ color: "var(--background)" }}
+          >
+            View More
+          </span>
+        </div>
       </div>
     </Link>
   );
