@@ -8,7 +8,7 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section className={cn(className)} style={{ paddingTop: 40, paddingBottom: 80 }}>
+    <section className={cn(className)} style={{ paddingTop: 0, paddingBottom: 80 }}>
       {children}
     </section>
   );

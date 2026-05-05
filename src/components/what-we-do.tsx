@@ -53,7 +53,7 @@ const regular = eventTypes.slice(1, 5);
 
 export function WhatWeDo() {
   return (
-    <section className="relative bg-background py-20 md:py-32 border-t border-border overflow-hidden">
+    <section className="relative bg-background border-t border-border overflow-hidden" style={{ paddingTop: 0, paddingBottom: 80 }}>
       <Container>
         <div className="flex flex-col gap-[24px]" style={{ marginBottom: 80 }}>
           <Eyebrow>What We Do</Eyebrow>

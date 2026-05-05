@@ -5,7 +5,7 @@ import { Container } from "@/components/atoms";
 
 export function CtaNap() {
   return (
-    <div className="border-t border-border" style={{ paddingTop: 120, paddingBottom: 120 }}>
+    <div className="border-t border-border" style={{ paddingTop: 0, paddingBottom: 80 }}>
       <Container>
         <div className="flex flex-col items-center text-center gap-[40px]">
           <h2

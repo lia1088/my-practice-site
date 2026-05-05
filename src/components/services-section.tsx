@@ -32,7 +32,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="relative bg-background py-20 md:py-32 border-t border-border" id="services">
+    <section className="relative bg-background border-t border-border" id="services" style={{ paddingTop: 0, paddingBottom: 80 }}>
       <Container>
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_1.6fr]">
 

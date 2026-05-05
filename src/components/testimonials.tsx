@@ -51,7 +51,7 @@ const Stars = () => (
 
 export function Testimonials() {
   return (
-    <section className="relative bg-background pt-32 pb-20 md:pb-32 border-t border-border overflow-hidden">
+    <section className="relative bg-background border-t border-border overflow-hidden" style={{ paddingTop: 0, paddingBottom: 80 }}>
       <Container>
         <div className="mb-16 text-center">
           <Eyebrow>Client Stories</Eyebrow>
