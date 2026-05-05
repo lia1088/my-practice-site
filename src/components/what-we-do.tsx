@@ -60,10 +60,12 @@ export function WhatWeDo() {
           <SectionHeading>Public Event Management</SectionHeading>
         </div>
 
+        <div className="flex flex-col gap-6">
+
         {/* Featured card */}
         <Link
           href={featured.href}
-          className="group relative mb-4 flex flex-col md:flex-row overflow-hidden border border-border bg-card transition-all hover:border-[var(--brand-primary)]/40"
+          className="group relative flex flex-col md:flex-row overflow-hidden border border-border bg-card transition-all hover:border-[var(--brand-primary)]/40"
         >
           <div className="relative h-64 md:h-80 md:w-[52%] flex-none overflow-hidden">
             <Image
@@ -76,7 +78,7 @@ export function WhatWeDo() {
             />
             <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-card to-transparent md:hidden" />
           </div>
-          <div className="flex flex-1 flex-col justify-center p-8 md:p-10">
+          <div className="flex flex-1 flex-col justify-center" style={{ padding: 24 }}>
             <p className="mb-3 text-[10px] font-extrabold uppercase tracking-[0.15em] text-muted-foreground">Featured</p>
             <span className="mb-4 inline-block w-fit border border-[var(--brand-primary)]/30 bg-[var(--brand-primary)]/8 text-[var(--brand-primary)] text-xs px-2 py-0.5 tracking-wide">
               {featured.badge}
@@ -94,7 +96,7 @@ export function WhatWeDo() {
         </Link>
 
         {/* 4-card grid */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ gap: 24 }}>
           {regular.map((event) => (
             <Link
               key={event.title}
@@ -111,7 +113,7 @@ export function WhatWeDo() {
                 />
                 <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-card to-transparent" />
               </div>
-              <div className="flex flex-1 flex-col p-5">
+              <div className="flex flex-1 flex-col" style={{ padding: 24 }}>
                 <span className="mb-3 inline-block w-fit border border-[var(--brand-primary)]/30 bg-[var(--brand-primary)]/8 text-[var(--brand-primary)] text-xs px-2 py-0.5 tracking-wide">
                   {event.badge}
                 </span>
@@ -130,7 +132,7 @@ export function WhatWeDo() {
         </div>
 
         {/* View all row */}
-        <div className="mt-4">
+        <div>
           <Link
             href="#services"
             className="group flex items-center justify-between border border-dashed border-border bg-card/60 px-8 py-5 transition-all hover:border-[var(--brand-primary)]/40"
@@ -148,6 +150,8 @@ export function WhatWeDo() {
             </span>
           </Link>
         </div>
+
+        </div>{/* end bento flex-col gap-6 */}
       </Container>
     </section>
   );
