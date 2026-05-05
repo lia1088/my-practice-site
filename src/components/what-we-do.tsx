@@ -120,20 +120,20 @@ export function WhatWeDo() {
           className="grid grid-cols-3"
           style={{
             gap: 24,
-            gridTemplateRows: "300px 300px 240px",
+            gridTemplateRows: "300px 300px 300px",
           }}
         >
           {/* Featured — spans 2 cols × 2 rows */}
           <BentoCard event={eventTypes[0]} showDescription className="col-span-2 row-span-2" />
 
           {/* Right column — two stacked cards */}
-          <BentoCard event={eventTypes[1]} />
-          <BentoCard event={eventTypes[2]} />
+          <BentoCard event={eventTypes[1]} showDescription />
+          <BentoCard event={eventTypes[2]} showDescription />
 
           {/* Bottom row — three equal cards */}
-          <BentoCard event={eventTypes[3]} />
-          <BentoCard event={eventTypes[4]} />
-          <BentoCard event={eventTypes[5]} />
+          <BentoCard event={eventTypes[3]} showDescription />
+          <BentoCard event={eventTypes[4]} showDescription />
+          <BentoCard event={eventTypes[5]} showDescription />
         </div>
       </Container>
     </section>
