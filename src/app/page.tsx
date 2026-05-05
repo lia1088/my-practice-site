@@ -1,5 +1,5 @@
 import { Nav } from "@/components/nav";
-import { Hero } from "@/components/hero";
+import { Hero, HeroStats } from "@/components/hero";
 import { TrustStrip } from "@/components/trust-strip";
 import { WhatWeDo } from "@/components/what-we-do";
 import { Services } from "@/components/services";
@@ -24,6 +24,7 @@ export default function Home() {
       <Hero />
       <main className="bg-background flex flex-col">
         <TrustStrip />
+        <HeroStats />
         <WhatWeDo />
         <Services />
         <ServicesSection />
