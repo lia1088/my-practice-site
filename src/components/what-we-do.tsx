@@ -121,7 +121,7 @@ export function WhatWeDo() {
           className="grid grid-cols-3"
           style={{
             gap: 24,
-            gridTemplateRows: "300px 300px 624px",
+            gridTemplateRows: "300px 300px 300px",
           }}
         >
           {/* Featured — spans 2 cols × 2 rows */}
