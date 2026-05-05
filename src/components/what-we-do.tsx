@@ -9,13 +9,12 @@ const eventTypes = [
     badge: "Live Events",
     description: "Multi-stage productions with crowd management, vendor coordination, and site design that holds up in front of thousands of people.",
     img: "/esw-01.avif",
-    featured: true,
   },
   {
     title: "Charity Walks",
     href: "#services",
     badge: "Charity Events",
-    description: "Permitting, site logistics, volunteer coordination, and participant experience so the day reflects the mission — not the friction behind it.",
+    description: "Permitting, site logistics, volunteer coordination, and participant experience so the day reflects the mission.",
     img: "/esw-02.avif",
   },
   {
@@ -29,27 +28,78 @@ const eventTypes = [
     title: "Cycling Events",
     href: "#services",
     badge: "Rides",
-    description: "Road closures, safety coordination, route logistics, and participant management across distances that stretch production thin.",
+    description: "Road closures, safety coordination, route logistics, and participant management across distances.",
     img: "/Dallas_Bike_Ride_2025-27.jpg",
   },
   {
     title: "Community Events",
     href: "#services",
     badge: "Civic & Community",
-    description: "Parades, civic celebrations, and holiday programming at a scale most internal teams aren't built for. We are.",
+    description: "Parades, civic celebrations, and holiday programming at a scale most internal teams aren't built for.",
     img: "/EventSouthwest-BigStarFrisco-25-26.jpg",
   },
   {
     title: "Brand Activations",
     href: "#services",
     badge: "Brand & Experiential",
-    description: "Permitting, site design, vendor management, and day-of oversight — giving the production the same quality as the brand.",
+    description: "Permitting, site design, vendor management, and day-of oversight — giving production the quality the brand deserves.",
     img: "/ESW-JPMORGAN-2025-72.jpg",
   },
 ];
 
-const featured = eventTypes[0];
-const regular = eventTypes.slice(1, 5);
+function BentoCard({
+  event,
+  showDescription = false,
+  className = "",
+}: {
+  event: typeof eventTypes[0];
+  showDescription?: boolean;
+  className?: string;
+}) {
+  return (
+    <Link
+      href={event.href}
+      className={`group relative overflow-hidden border border-border bg-card ${className}`}
+    >
+      <Image
+        src={event.img}
+        alt={event.title}
+        fill
+        className="object-cover transition-transform duration-700 group-hover:scale-105"
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
+      {/* Gradient overlay */}
+      <div
+        className="absolute inset-0"
+        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 50%, transparent 100%)" }}
+      />
+      {/* Info */}
+      <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-2" style={{ padding: 24 }}>
+        <span
+          className="w-fit text-[0.62rem] font-mono tracking-[0.18em] uppercase border px-2 py-0.5"
+          style={{
+            color: "var(--brand-primary)",
+            borderColor: "color-mix(in srgb, var(--brand-primary) 30%, transparent)",
+            backgroundColor: "color-mix(in srgb, var(--brand-primary) 8%, transparent)",
+          }}
+        >
+          {event.badge}
+        </span>
+        <h3 className="font-heading font-extrabold text-white capitalize leading-tight" style={{ fontSize: "clamp(1rem, 1.4vw, 1.3rem)" }}>
+          {event.title}
+        </h3>
+        {showDescription && (
+          <p className="text-sm text-white/60 leading-relaxed" style={{ maxWidth: "42ch" }}>
+            {event.description}
+          </p>
+        )}
+        <span className="text-[0.62rem] font-mono tracking-[0.16em] uppercase text-white/40 group-hover:text-white/70 transition-colors mt-1">
+          Learn More →
+        </span>
+      </div>
+    </Link>
+  );
+}
 
 export function WhatWeDo() {
   return (
@@ -60,98 +110,26 @@ export function WhatWeDo() {
           <SectionHeading>Public Event Management</SectionHeading>
         </div>
 
-        <div className="flex flex-col gap-6">
-
-        {/* Featured card */}
-        <Link
-          href={featured.href}
-          className="group relative flex flex-col md:flex-row overflow-hidden border border-border bg-card transition-all hover:border-[var(--brand-primary)]/40"
+        {/* Bento grid */}
+        <div
+          className="grid grid-cols-3"
+          style={{
+            gap: 24,
+            gridTemplateRows: "300px 300px 240px",
+          }}
         >
-          <div className="relative h-64 md:h-80 md:w-[52%] flex-none overflow-hidden">
-            <Image
-              src={featured.img}
-              alt={featured.title}
-              fill
-              className="object-cover transition-all duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 52vw"
-              priority
-            />
-            <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-card to-transparent md:hidden" />
-          </div>
-          <div className="flex flex-1 flex-col justify-center" style={{ padding: 24 }}>
-            <p className="mb-3 text-[10px] font-extrabold uppercase tracking-[0.15em] text-muted-foreground">Featured</p>
-            <span className="mb-4 inline-block w-fit border border-[var(--brand-primary)]/30 bg-[var(--brand-primary)]/8 text-[var(--brand-primary)] text-xs px-2 py-0.5 tracking-wide">
-              {featured.badge}
-            </span>
-            <h3 className="font-heading text-2xl font-extrabold text-foreground leading-snug group-hover:text-[var(--brand-primary)] transition-colors md:text-3xl capitalize">
-              {featured.title}
-            </h3>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground max-w-sm">
-              {featured.description}
-            </p>
-            <div className="mt-6 text-xs font-semibold uppercase tracking-wider text-muted-foreground group-hover:text-[var(--brand-primary)] transition-colors">
-              Learn More →
-            </div>
-          </div>
-        </Link>
+          {/* Featured — spans 2 cols × 2 rows */}
+          <BentoCard event={eventTypes[0]} showDescription className="col-span-2 row-span-2" />
 
-        {/* 4-card grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ gap: 24 }}>
-          {regular.map((event) => (
-            <Link
-              key={event.title}
-              href={event.href}
-              className="group relative flex flex-col overflow-hidden border border-border bg-card transition-all hover:border-[var(--brand-primary)]/40"
-            >
-              <div className="relative h-44 w-full overflow-hidden">
-                <Image
-                  src={event.img}
-                  alt={event.title}
-                  fill
-                  className="object-cover transition-all duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                />
-                <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-card to-transparent" />
-              </div>
-              <div className="flex flex-1 flex-col" style={{ padding: 24 }}>
-                <span className="mb-3 inline-block w-fit border border-[var(--brand-primary)]/30 bg-[var(--brand-primary)]/8 text-[var(--brand-primary)] text-xs px-2 py-0.5 tracking-wide">
-                  {event.badge}
-                </span>
-                <h3 className="font-heading text-base font-extrabold text-foreground leading-snug group-hover:text-[var(--brand-primary)] transition-colors capitalize">
-                  {event.title}
-                </h3>
-                <p className="mt-2 text-xs leading-relaxed text-muted-foreground line-clamp-3">
-                  {event.description}
-                </p>
-                <div className="mt-auto pt-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground group-hover:text-[var(--brand-primary)] transition-colors">
-                  Learn More →
-                </div>
-              </div>
-            </Link>
-          ))}
+          {/* Right column — two stacked cards */}
+          <BentoCard event={eventTypes[1]} />
+          <BentoCard event={eventTypes[2]} />
+
+          {/* Bottom row — three equal cards */}
+          <BentoCard event={eventTypes[3]} />
+          <BentoCard event={eventTypes[4]} />
+          <BentoCard event={eventTypes[5]} />
         </div>
-
-        {/* View all row */}
-        <div>
-          <Link
-            href="#services"
-            className="group flex items-center justify-between border border-dashed border-border bg-card/60 px-8 py-5 transition-all hover:border-[var(--brand-primary)]/40"
-          >
-            <div className="flex items-center gap-4">
-              <span className="inline-block w-fit border border-[var(--brand-primary)]/30 bg-[var(--brand-primary)]/8 text-[var(--brand-primary)] text-xs px-2 py-0.5 tracking-wide">
-                {eventTypes[5].badge}
-              </span>
-              <span className="text-sm font-semibold text-foreground group-hover:text-[var(--brand-primary)] transition-colors">
-                {eventTypes[5].title}
-              </span>
-            </div>
-            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground group-hover:text-[var(--brand-primary)] transition-colors">
-              Learn More →
-            </span>
-          </Link>
-        </div>
-
-        </div>{/* end bento flex-col gap-6 */}
       </Container>
     </section>
   );
