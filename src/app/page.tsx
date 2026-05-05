@@ -1,8 +1,9 @@
 import { Nav } from "@/components/nav";
+import { Hero } from "@/components/hero";
 import { TrustStrip } from "@/components/trust-strip";
 import { WhatWeDo } from "@/components/what-we-do";
 import { ServicesSection } from "@/components/services-section";
-import { Hero } from "@/components/hero";
+import { CaseStudies } from "@/components/case-studies";
 import { ProofSection } from "@/components/proof-section";
 import { Process } from "@/components/process";
 import { Testimonials } from "@/components/testimonials";
@@ -14,11 +15,12 @@ export default function Home() {
   return (
     <>
       <Nav />
+      <Hero />
       <main className="bg-background flex flex-col">
         <TrustStrip />
         <WhatWeDo />
         <ServicesSection />
-        <Hero />
+        <CaseStudies />
         <ProofSection />
         <Process />
         <Testimonials />
