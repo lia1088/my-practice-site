@@ -90,7 +90,7 @@ export function Hero() {
 
         {/* Text — left 50% */}
         <div className="flex items-center py-12">
-          <div className="flex flex-col gap-6" style={{ width: "80%" }}>
+          <div className="flex flex-col" style={{ width: "80%", gap: 24 }}>
 
             {/* Pill / eyebrow */}
             <div className="inline-flex w-fit items-center gap-2 border rounded-full" style={{ padding: "12px 20px", borderColor: "color-mix(in srgb, var(--brand-primary) 30%, transparent)", backgroundColor: "color-mix(in srgb, var(--brand-primary) 8%, transparent)" }}>
@@ -107,13 +107,13 @@ export function Hero() {
               The best kept secret in event management.
             </h1>
 
-            <p className="text-foreground font-sans" style={{ maxWidth: "80%" }}>
+            <p className="text-foreground font-sans" style={{ maxWidth: "80%", marginTop: 16 }}>
               Large-scale public event management for non-profits, municipalities, brands, companies, and agencies.
             </p>
 
             <GoogleRating />
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4" style={{ marginTop: 16 }}>
               <Link
                 href="#contact"
                 className={cn(buttonVariants({ size: "lg" }), "font-sans")}
