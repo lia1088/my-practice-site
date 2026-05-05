@@ -104,8 +104,8 @@ function BentoCard({
         {/* Button — hidden below, slides up on hover */}
         <div className="overflow-hidden" style={{ marginTop: 8 }}>
           <span
-            className="inline-flex items-center gap-2 text-[0.72rem] font-sans tracking-widest uppercase text-foreground translate-y-full group-hover:translate-y-0 transition-transform duration-400 px-4 py-2 bg-white text-background block w-fit"
-            style={{ color: "var(--background)" }}
+            className="inline-flex items-center gap-2 text-[0.72rem] font-sans tracking-widest uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-400 w-fit"
+            style={{ backgroundColor: "var(--brand-primary)", color: "#ffffff", padding: "12px 20px" }}
           >
             View More
           </span>
