@@ -77,11 +77,11 @@ export function WhatWeDo() {
             <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-card to-transparent md:hidden" />
           </div>
           <div className="flex flex-1 flex-col justify-center p-8 md:p-10">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.15em] text-muted-foreground">Featured</p>
+            <p className="mb-3 text-[10px] font-extrabold uppercase tracking-[0.15em] text-muted-foreground">Featured</p>
             <span className="mb-4 inline-block w-fit border border-[var(--brand-primary)]/30 bg-[var(--brand-primary)]/8 text-[var(--brand-primary)] text-xs px-2 py-0.5 tracking-wide">
               {featured.badge}
             </span>
-            <h3 className="font-heading text-2xl font-bold text-foreground leading-snug group-hover:text-[var(--brand-primary)] transition-colors md:text-3xl capitalize">
+            <h3 className="font-heading text-2xl font-extrabold text-foreground leading-snug group-hover:text-[var(--brand-primary)] transition-colors md:text-3xl capitalize">
               {featured.title}
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground max-w-sm">
@@ -115,7 +115,7 @@ export function WhatWeDo() {
                 <span className="mb-3 inline-block w-fit border border-[var(--brand-primary)]/30 bg-[var(--brand-primary)]/8 text-[var(--brand-primary)] text-xs px-2 py-0.5 tracking-wide">
                   {event.badge}
                 </span>
-                <h3 className="font-heading text-base font-bold text-foreground leading-snug group-hover:text-[var(--brand-primary)] transition-colors capitalize">
+                <h3 className="font-heading text-base font-extrabold text-foreground leading-snug group-hover:text-[var(--brand-primary)] transition-colors capitalize">
                   {event.title}
                 </h3>
                 <p className="mt-2 text-xs leading-relaxed text-muted-foreground line-clamp-3">

@@ -31,7 +31,7 @@ export function ProofSection() {
 
       <div className="pointer-events-none select-none absolute inset-0 flex items-center justify-center overflow-hidden">
         <span
-          className="font-heading font-bold tracking-tighter leading-none"
+          className="font-heading font-extrabold tracking-tighter leading-none"
           style={{
             fontSize: "clamp(160px, 28vw, 400px)",
             WebkitTextStroke: "1px rgba(255,255,255,0.07)",
@@ -47,7 +47,7 @@ export function ProofSection() {
           <p className="mb-4 text-xs font-mono font-semibold uppercase tracking-widest text-[var(--brand-primary)]">
             Track Record
           </p>
-          <h2 className="font-heading text-4xl font-bold tracking-tight text-white md:text-6xl capitalize">
+          <h2 className="font-heading text-4xl font-extrabold tracking-tight text-white md:text-6xl capitalize">
             13 years. 4 million participants.{" "}
             <br className="hidden md:block" />
             <span style={{ color: "var(--brand-primary)" }}>Zero shortcuts.</span>
@@ -60,7 +60,7 @@ export function ProofSection() {
           <div className="mt-16 grid grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="bg-black/30 backdrop-blur-sm px-8 py-10">
-                <div className="font-heading text-5xl font-bold text-white tabular-nums md:text-6xl">
+                <div className="font-heading text-5xl font-extrabold text-white tabular-nums md:text-6xl">
                   {stat.value}
                 </div>
                 <div className="mt-2 text-sm font-medium text-zinc-400">{stat.label}</div>

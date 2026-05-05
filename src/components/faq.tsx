@@ -44,7 +44,7 @@ export function FAQ() {
           <div className="col-span-5 flex flex-col gap-6">
             <Eyebrow>FAQ</Eyebrow>
             <h2
-              className="font-heading font-bold text-foreground capitalize"
+              className="font-heading font-extrabold text-foreground capitalize"
               style={{ fontSize: "clamp(2.4rem, 4vw, 4rem)", lineHeight: 0.95, letterSpacing: 0 }}
             >
               Frequently asked questions

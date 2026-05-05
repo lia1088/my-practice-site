@@ -11,7 +11,7 @@ const heading = Big_Shoulders({
 const body = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {

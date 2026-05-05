@@ -63,15 +63,15 @@ export function ServicesSection() {
             {services.map((service) => (
               <div key={service.title} className="group relative py-8 first:pt-0 overflow-hidden">
                 <span
-                  className="pointer-events-none select-none absolute right-0 top-1/2 -translate-y-1/2 font-heading font-bold leading-none text-border"
+                  className="pointer-events-none select-none absolute right-0 top-1/2 -translate-y-1/2 font-heading font-extrabold leading-none text-border"
                   style={{ fontSize: "7rem" }}
                 >
                   {service.number}
                 </span>
                 <div className="relative flex items-start gap-6">
-                  <span className="mt-1 text-xs font-bold text-foreground/10 tabular-nums">{service.number}</span>
+                  <span className="mt-1 text-xs font-extrabold text-foreground/10 tabular-nums">{service.number}</span>
                   <div className="flex-1 pr-16">
-                    <h3 className="font-heading text-xl font-bold text-foreground transition-colors group-hover:text-[var(--brand-primary)] capitalize">
+                    <h3 className="font-heading text-xl font-extrabold text-foreground transition-colors group-hover:text-[var(--brand-primary)] capitalize">
                       {service.title}
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">

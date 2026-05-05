@@ -23,7 +23,7 @@ export function EditorialBreak() {
               14 years. 4 million participants.
             </p>
             <h2
-              className="font-heading font-bold text-foreground capitalize"
+              className="font-heading font-extrabold text-foreground capitalize"
               style={{ fontSize: "clamp(2.4rem, 5vw, 4.5rem)", lineHeight: 0.95, letterSpacing: 0 }}
             >
               We don't just manage events.<br />We make them unforgettable.
